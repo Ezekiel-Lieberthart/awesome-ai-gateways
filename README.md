@@ -100,6 +100,7 @@ Hosted APIs for many models behind one key, and routers that pick a model for ea
 
 - [Amazon Bedrock Intelligent Prompt Routing](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-routing.html#prompt-routing-works) - Serverless Bedrock endpoint that routes each request between models in the same family based on predicted response quality (`Proprietary`).
 - [Microsoft Foundry Model Router](https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/model-router#how-model-router-works) - Trained language model, deployed like any other Foundry model, that routes each prompt in real time to the most suitable underlying LLM (`Proprietary`).
+- [Nivana](https://nivana.one/docs/routing) - Hosted model router that profiles each request by task and difficulty, scores every model in its pool on measured quality, live price, and speed, and sends the request to the highest scorer (`Proprietary`).
 - [Not Diamond](https://www.notdiamond.ai) - Model router for coding agents that predicts which model to use for each input and works with existing harnesses and gateways (`Proprietary`).
 - [OpenRouter](https://openrouter.ai/docs/quickstart#using-the-openrouter-api) - Hosted API for hundreds of models behind one endpoint, with automatic fallbacks and cost-based provider selection (`Proprietary`).
 - [Requesty](https://www.requesty.ai) - Hosted gateway and router for 600+ models through one OpenAI-compatible API, with routing, caching, failover, spend limits, and EU data residency (`Proprietary`).
