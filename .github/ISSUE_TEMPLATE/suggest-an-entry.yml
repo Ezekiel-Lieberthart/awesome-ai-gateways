@@ -1,0 +1,70 @@
+name: Suggest an entry
+description: Suggest a gateway, specification, guide, or article for the list.
+title: "Suggest: "
+labels: ["suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Prefer opening a pull request if you can. Use this form when you are not sure the entry fits, or when you are suggesting a product you do not work on. The requirements are in [contributing.md](https://github.com/ai-gateways/awesome-ai-gateways/blob/main/contributing.md#requirements-for-an-entry).
+  - type: input
+    id: name
+    attributes:
+      label: Name
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link
+      description: The repository for open source projects, or the page that describes the gateway feature for commercial products.
+    validations:
+      required: true
+  - type: dropdown
+    id: section
+    attributes:
+      label: Section
+      options:
+        - AI Gateways
+        - MCP Gateways
+        - Agent Gateways
+        - API Gateways with AI Features
+        - Cloud and Platform AI Gateways
+        - Model Routers and Aggregators
+        - Inference Gateways
+        - Specifications and Standards
+        - Articles
+        - Not sure
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Type
+      options:
+        - Open source
+        - Commercial
+        - Specification, guide, or article
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Proposed description
+      description: One factual sentence under 280 characters that says what it does.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Why it belongs
+      description: Open source, stars and maintainer. Commercial, the page that supports each claim. Resources, the section of the page you would link.
+    validations:
+      required: true
+  - type: input
+    id: affiliation
+    attributes:
+      label: Affiliation
+      description: How you are connected to it, for example "I work on it" or "No affiliation".
+    validations:
+      required: true

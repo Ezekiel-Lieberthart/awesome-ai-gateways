@@ -1,0 +1,38 @@
+name: Report a problem with an entry
+description: A broken link, an archived or unmaintained project, or a description that is out of date.
+title: "Report: "
+labels: ["entry update"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Entry name
+    validations:
+      required: true
+  - type: dropdown
+    id: problem
+    attributes:
+      label: Problem
+      options:
+        - Broken link or missing section anchor
+        - Archived, unmaintained, or discontinued
+        - Description no longer accurate
+        - Wrong license, language, or section
+        - Product renamed or moved
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: What is wrong and what it should say, with a link that shows it.
+    validations:
+      required: true
+  - type: input
+    id: affiliation
+    attributes:
+      label: Affiliation
+      description: How you are connected to the product, for example "I work on a competing product" or "No affiliation".
+    validations:
+      required: true

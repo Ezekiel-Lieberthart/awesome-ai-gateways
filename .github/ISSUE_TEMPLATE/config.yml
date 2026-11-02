@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Contribution guidelines
+    url: https://github.com/ai-gateways/awesome-ai-gateways/blob/main/contributing.md#requirements-for-an-entry
+    about: What qualifies for the list and how entries are written.

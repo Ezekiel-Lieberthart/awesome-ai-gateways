@@ -1,0 +1,26 @@
+name: List health
+
+# Rechecks every entry each week: broken links, moved anchors, archived or unmaintained
+# repositories, and license changes. Errors open or update a "List health report" issue.
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Check every entry
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 .github/scripts/review.py full README.md --issue

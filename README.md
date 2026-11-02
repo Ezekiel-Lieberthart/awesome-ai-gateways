@@ -153,4 +153,4 @@ Vendor-neutral guides from the [AI Gateways](https://github.com/ai-gateways#star
 
 ## Contributing
 
-Contributions are welcome. Read the [contribution guidelines](contributing.md) before opening a pull request.
+Contributions are welcome, including from vendors who disclose their affiliation. Read the [contribution guidelines](contributing.md) before opening a pull request; an automated review checks each entry within a few minutes.
