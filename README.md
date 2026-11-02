@@ -36,6 +36,7 @@ Gateways built for model traffic: one API in front of many providers, with routi
 - [Otari](https://github.com/mozilla-ai/otari) - OpenAI-compatible gateway from Mozilla.ai that routes one endpoint to 40+ providers, issues virtual keys, enforces budgets, and tracks usage (`Apache-2.0`, `Python`).
 - [Plano](https://github.com/katanemo/plano) - Out-of-process proxy and data plane for agentic apps that handles LLM routing with its own routing model, agent orchestration, guardrails, and tracing (`Apache-2.0`, `Rust`).
 - [Portkey AI Gateway](https://github.com/Portkey-AI/gateway) - Gateway that routes to 1,600+ models through one API with retries, fallbacks, load balancing, conditional routing, and guardrails, with an MCP gateway in Portkey's hosted platform (`MIT`, `TypeScript`).
+- [Teapot Router](https://teapotrouter.com) - Hosted gateway for coding agents that speaks the Anthropic and OpenAI protocols on one key, with per-request cost, token, and latency logging, public machine-readable pricing, multi-upstream failover, and credit that never expires (`Proprietary`).
 - [Traceloop Hub](https://github.com/traceloop/hub) - LLM gateway that exposes an OpenAI-compatible API over OpenAI, Anthropic, Azure OpenAI, Vertex AI, and Bedrock and records every call as OpenTelemetry traces (`Apache-2.0`, `Rust`).
 - [TrueFoundry AI Gateway](https://www.truefoundry.com/ai-gateway) - Enterprise gateway for hundreds of models with unified governance and real-time observability, offered alongside TrueFoundry's MCP gateway and agent gateway (`Proprietary`).
 
