@@ -1,4 +1,4 @@
-some.re/badge.svg)](https://awesome.re)
+# Awesome AI Gateways [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 > AI gateways sit between applications and the models, MCP tools, and agents they call, and apply routing, access control, spend limits, guardrails, and logging to that traffic.
 
