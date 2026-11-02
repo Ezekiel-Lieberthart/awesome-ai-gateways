@@ -296,14 +296,20 @@ def check_github(entry):
         out.append(("warning", f"Repository moved to `{d['full_name']}`; link the new URL."))
     if d.get("archived"):
         out.append(("error", "Repository is archived."))
-    try:
-        commits = gh_api(f"repos/{d['full_name']}/commits?sha={urllib.parse.quote(d['default_branch'])}&per_page=1")
-        last = commits[0]["commit"]["committer"]["date"]
+    last = None
+    branch = urllib.parse.quote(d["default_branch"], safe="")
+    for path in (f"repos/{d['full_name']}/branches/{branch}", f"repos/{d['full_name']}/branches/{branch}"):
+        try:
+            last = gh_api(path)["commit"]["commit"]["committer"]["date"]
+            break
+        except Exception:  # retry once; API reads occasionally time out
+            continue
+    if last:
         age = (datetime.datetime.now(datetime.timezone.utc) - datetime.datetime.fromisoformat(last.replace("Z", "+00:00"))).days
         if age > MAX_STALE_DAYS:
             out.append(("error", f"No commit on the default branch in {age} days (limit: six months)."))
-    except Exception:
-        out.append(("warning", "Could not read the latest commit."))
+    else:
+        out.append(("warning", "Could not read the latest commit on the default branch."))
     stars = d.get("stargazers_count", 0)
     if stars < MIN_STARS:
         out.append(("warning", f"{stars} stars, below the {MIN_STARS}-star guideline. Maintainers accept this only for projects run by an established company or foundation."))
