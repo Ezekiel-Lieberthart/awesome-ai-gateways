@@ -213,10 +213,10 @@ def http_get(url, timeout=30, headers=None):
         return r.status, r.geturl(), r.read().decode("utf-8", "ignore")
 
 
-def gh_api(path, method="GET", data=None, accept="application/vnd.github+json"):
+def gh_api(path, method="GET", data=None, accept="application/vnd.github+json", auth=True):
     url = path if path.startswith("http") else f"https://api.github.com/{path.lstrip('/')}"
     headers = {"User-Agent": UA, "Accept": accept, "X-GitHub-Api-Version": "2022-11-28"}
-    if TOKEN:
+    if TOKEN and auth:
         headers["Authorization"] = f"Bearer {TOKEN}"
     body = json.dumps(data).encode() if data is not None else None
     if body:
@@ -296,20 +296,23 @@ def check_github(entry):
         out.append(("warning", f"Repository moved to `{d['full_name']}`; link the new URL."))
     if d.get("archived"):
         out.append(("error", "Repository is archived."))
-    last = None
+    last, problem = None, ""
     branch = urllib.parse.quote(d["default_branch"], safe="")
-    for path in (f"repos/{d['full_name']}/branches/{branch}", f"repos/{d['full_name']}/branches/{branch}"):
+    # Some organizations block other installations' tokens; public data is also readable anonymously.
+    for auth in (True, True, False):
         try:
-            last = gh_api(path)["commit"]["commit"]["committer"]["date"]
+            last = gh_api(f"repos/{d['full_name']}/branches/{branch}", auth=auth)["commit"]["commit"]["committer"]["date"]
             break
-        except Exception:  # retry once; API reads occasionally time out
-            continue
+        except urllib.error.HTTPError as e:
+            problem = f" (HTTP {e.code})"
+        except Exception as e:
+            problem = f" ({str(e)[:60]})"
     if last:
         age = (datetime.datetime.now(datetime.timezone.utc) - datetime.datetime.fromisoformat(last.replace("Z", "+00:00"))).days
         if age > MAX_STALE_DAYS:
             out.append(("error", f"No commit on the default branch in {age} days (limit: six months)."))
     else:
-        out.append(("warning", "Could not read the latest commit on the default branch."))
+        out.append(("warning", f"Could not read the latest commit on the default branch{problem}."))
     stars = d.get("stargazers_count", 0)
     if stars < MIN_STARS:
         out.append(("warning", f"{stars} stars, below the {MIN_STARS}-star guideline. Maintainers accept this only for projects run by an established company or foundation."))
