@@ -110,6 +110,7 @@ Hosted APIs for many models behind one key, and routers that pick a model for ea
 - [OpenRouter](https://openrouter.ai/docs/quickstart#using-the-openrouter-api) - Hosted API for hundreds of models behind one endpoint, with automatic fallbacks and cost-based provider selection (`Proprietary`).
 - [Requesty](https://www.requesty.ai) - Hosted gateway and router for 600+ models through one OpenAI-compatible API, with routing, caching, failover, spend limits, and EU data residency (`Proprietary`).
 - [Septor Labs](https://septorlabs.com/docs/introduction) - Hosted gateway that serves OpenAI-style and Anthropic-style clients from one key, routes by priority, weight, least-connections, or latency, fails over before the first token, and adds semantic caching, per-key budgets, and prepaid credits (`Proprietary`).
+- [UberLLM](https://uberllm.dev/docs/quickstart) - Hosted API that accepts OpenAI and Anthropic wire formats with one key for every model in its catalog, sends each call to a third-party provider, bills what that provider charged from a prepaid balance, and supports per-key spend limits and per-minute rate limits (`Proprietary`).
 - [vLLM Semantic Router](https://github.com/vllm-project/semantic-router) - Policy-driven router from the vLLM project that selects or combines models for each call across local, private, and cloud backends (`Apache-2.0`, `Go`).
 
 ## Inference Gateways
