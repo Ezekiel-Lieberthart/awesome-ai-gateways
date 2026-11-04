@@ -101,6 +101,7 @@ AI gateways offered as part of a cloud, data, or developer platform.
 Hosted APIs for many models behind one key, and routers that pick a model for each request.
 
 - [Amazon Bedrock Intelligent Prompt Routing](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-routing.html#prompt-routing-works) - Serverless Bedrock endpoint that routes each request between models in the same family based on predicted response quality (`Proprietary`).
+- [AnyAPI.ai](https://anyapi.ai) - Hosted API for 400+ models behind one OpenAI-compatible endpoint and an Anthropic Messages endpoint on the same host, with automatic provider failover, per-token billing, and a free tier of 100K tokens per day (`Proprietary`).
 - [cheapaimodel](https://cheapaimodel.ai/docs) - Hosted OpenAI-compatible API with one key for every model in its catalog, billed per token from a prepaid US-dollar balance, with per-key expiry dates, spending budgets, model allowlists, and IP allowlists (`Proprietary`).
 - [Microsoft Foundry Model Router](https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/model-router#how-model-router-works) - Trained language model, deployed like any other Foundry model, that routes each prompt in real time to the most suitable underlying LLM (`Proprietary`).
 - [Nivana](https://nivana.one/docs/routing) - Hosted model router that profiles each request by task and difficulty, scores every model in its pool on measured quality, live price, and speed, and sends the request to the highest scorer (`Proprietary`).
