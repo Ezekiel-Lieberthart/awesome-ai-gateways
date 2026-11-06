@@ -47,6 +47,7 @@ Gateways built for model traffic: one API in front of many providers, with routi
 
 Gateways that put many MCP servers behind one endpoint and add authentication, tool filtering, and audit logs. agentgateway, Bifrost, Kong Gateway, LiteLLM, and Portkey AI Gateway, listed in other sections, also handle MCP traffic.
 
+- [Agentik](https://www.agentik.cc) - Tool gateway that connects Claude, ChatGPT, Codex, and Cursor to third-party tools through one MCP connection, with API keys that carry spending limits per hour, per day, in total, and per tool (`Proprietary`).
 - [Archestra](https://github.com/archestra-ai/archestra) - Platform with an MCP gateway using OAuth and on-behalf-of authentication, an LLM gateway, an A2A gateway, an MCP registry, SSO, RBAC, and guardrails (`AGPL-3.0`, `TypeScript`).
 - [ContextForge](https://github.com/IBM/mcp-context-forge) - IBM registry and proxy that federates MCP servers, A2A agents, and REST or gRPC APIs into one endpoint with central governance, discovery, and observability (`Apache-2.0`, `Python`).
 - [Docker MCP Gateway](https://github.com/docker/mcp-gateway) - Docker CLI plugin behind the MCP Toolkit in Docker Desktop that runs and deploys MCP servers from the Docker MCP Catalog and serves them to clients through one gateway (`MIT`, `Go`).
