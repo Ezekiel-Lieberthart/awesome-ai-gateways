@@ -42,7 +42,7 @@ Gateways built for model traffic: one API in front of many providers, with routi
 - [Teapot Router](https://teapotrouter.com) - Hosted gateway for coding agents that speaks the Anthropic and OpenAI protocols on one key, with per-request cost, token, and latency logging, public machine-readable pricing, multi-upstream failover, and credit that never expires (`Proprietary`).
 - [Traceloop Hub](https://github.com/traceloop/hub) - LLM gateway that exposes an OpenAI-compatible API over OpenAI, Anthropic, Azure OpenAI, Vertex AI, and Bedrock and records every call as OpenTelemetry traces (`Apache-2.0`, `Rust`).
 - [TrueFoundry AI Gateway](https://www.truefoundry.com/ai-gateway) - Enterprise gateway for hundreds of models with unified governance and real-time observability, offered alongside TrueFoundry's MCP gateway and agent gateway (`Proprietary`).
-- [Vectoree](https://vectoree.ai) - Hosted OpenAI-compatible gateway for coding agents with one project key across multiple providers, plus auth, Postgres and object storage, a CLI and agent skill, billed pay-as-you-go with a $5 welcome credit (`Proprietary`).
+- [Vectoree](https://vectoree.ai) - Hosted OpenAI-compatible gateway for coding agents with one project key across multiple providers, plus auth, PostgreSQL and object storage, a CLI and agent skill, billed pay-as-you-go with a $5 welcome credit (`Proprietary`).
 
 ## MCP Gateways
 
